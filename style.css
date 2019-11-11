@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #67DFD5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input, textarea {
+    background-color: rgba(255, 255, 255, 0.295);
+    width: 500px;
+    margin: 5px;
+}
+
+button {
+    margin: 5px;
+}
+
+
+.card-container {
+    width: 240px;
+    padding: 18px;
+    margin: 6px;
+    background: white;
+    border: 1px solid black;
+    display: inline-block;
+    transition: all 5s;
+}
+
+.card-container p {
+    margin: 12px 0;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+form {
+    background-color: #ffff;
+    border-radius: 5px;
+    width: 95%;
+    padding: 10px;
+}
+
+form h1 {
+    border-bottom: black;
+}
+
+#output {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-container {
+    width: 45%;
+}
