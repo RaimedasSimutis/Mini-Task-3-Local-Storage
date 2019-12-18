@@ -14,7 +14,6 @@ const getCardsFromLocalStorage = () => {
 
 const addCard = (card) => {
     cardsArr.push(card);
-    //console.log(cardsArr);
     saveCardsToLocalStorage(cardsArr);
     generateCards(cardsArr);
 }
@@ -25,7 +24,7 @@ const generateCards = (arr) => {
     arr.forEach((element, index) => {
         // creating HTML elements
         const cardContainer = document.createElement('div');
-        const cardName = document.createElement('p');
+        const cardName = document.createElement('h4');
         const cardEmail = document.createElement('p');
         const cardAddress = document.createElement('p');
         const cardPhoneNum = document.createElement('p');
@@ -41,7 +40,7 @@ const generateCards = (arr) => {
         cardAddress.textContent = element.address; 
         cardPhoneNum.textContent = element.phoneNum; 
         cardDescription.textContent = element.description; 
-        cardDeleteBtn.textContent = 'X';
+        cardDeleteBtn.textContent = 'Delete';
 
         // append HTML elements
         cardContainer.appendChild(cardName);
@@ -60,9 +59,7 @@ const generateCards = (arr) => {
                 
             }) 
             
-            //console.log(cardsArr);
             saveCardsToLocalStorage(cardsArr);
-            //generateCards(cardsArr);
         })
     })
 }
@@ -78,17 +75,15 @@ inputForm.addEventListener('submit', (event) => {
         phoneNum: inputForm[3].value,
         description: inputForm[4].value
     }
-    //console.log(card);
+
     addCard(card);
 });
 
 clearCardsBtn.addEventListener('click', (event) => {
-    //console.log('clear')
     window.localStorage.clear();
     cardsArr= getCardsFromLocalStorage();
     generateCards(cardsArr);
 });
 
 let cardsArr = getCardsFromLocalStorage();
-//console.log(cardsArr);
 generateCards(cardsArr);
